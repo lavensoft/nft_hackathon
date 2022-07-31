@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.div`
-    display: inline-block;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
