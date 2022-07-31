@@ -90,6 +90,9 @@ function Navbar(props) {
 						<Link to='nft/create' style={{ color: 'black' }}>
 							<MenuItem>Create</MenuItem>
 						</Link>
+						<Link to='nft/Register' style={{ color: 'black' }}>
+							<MenuItem>Register</MenuItem>
+						</Link>
 					</Menu>
 
 					<Option>
