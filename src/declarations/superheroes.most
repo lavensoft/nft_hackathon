@@ -1,0 +1,63 @@
+// Version: 1.0.0
+type AssocList<K, V> = List<(K, V)>;
+type AssocList__1<K, V> = AssocList<K, V>;
+type Branch<K, V> = {left : Trie<K, V>; right : Trie<K, V>; size : Nat};
+type Hash = Nat32;
+type Key<K> = {hash : Hash; key : K};
+type Leaf<K, V> = {keyvals : AssocList__1<Key<K>, V>; size : Nat};
+type List<T> = ?(T, List<T>);
+type Operation =
+  {
+    #approve;
+    #approveAll;
+    #burn;
+    #createOrder;
+    #mint : ?TokenMetadata;
+    #revokeAll;
+    #setMetadata;
+    #transfer;
+    #transferFrom
+  };
+type Record = {#metadata : ?TokenMetadata; #user : Principal};
+type Set<T> = Trie<T, ()>;
+type Time = Int;
+type TokenInfo =
+  {
+    index : Nat;
+    var metadata : ?TokenMetadata;
+    var operator : ?Principal;
+    var owner : Principal;
+    timestamp : Time
+  };
+type TokenInfo__1 = TokenInfo;
+type TokenMetadata = {tokenUri : Text};
+type Trie<K, V> = {#branch : Branch<K, V>; #empty; #leaf : Leaf<K, V>};
+type TxRecord =
+  {
+    caller : Principal;
+    from : Record;
+    index : Nat;
+    op : Operation;
+    timestamp : Time;
+    to : Record;
+    tokenIndex : ?Nat
+  };
+type TxRecord__1 = TxRecord;
+type UserInfo__1 =
+  {
+    var allowedBy : Set<Principal>;
+    var allowedTokens : Set<Nat>;
+    var operators : Set<Principal>;
+    var tokens : Set<Nat>
+  };
+type UserInfo__2 = UserInfo__1;
+actor {
+  stable var blackhole : Principal;
+  stable var owner_ : Principal;
+  stable var tokensEntries : [(Nat, TokenInfo__1)];
+  stable var totalOrders_ : Nat;
+  stable var totalSupply_ : Nat;
+  stable var txIndex : Nat;
+  stable var txs : [TxRecord__1];
+  stable var usersEntries : [(Principal, UserInfo__2)]
+};
