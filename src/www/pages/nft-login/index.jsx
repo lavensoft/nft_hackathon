@@ -208,7 +208,7 @@ function CreateNft(props) {
 						name='firstName'
 						rules={[{ required: true, message: 'Please input your first name!' }]}>		
 						<label htmlFor="firstName" >First name
-							<Input name='firstName' size='middle' placeholder='First name'/>
+							<Input  name='firstName' size='middle' placeholder='First name'/>
 						</label>	
 					</Form.Item>
 					<Form.Item
