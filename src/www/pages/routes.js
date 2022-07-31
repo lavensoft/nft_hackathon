@@ -9,6 +9,8 @@ const HomePage = lazy(() => import("./home"))
 const DetailCollections = lazy(() => import("./detail-collections"))
 const DetailNft = lazy(() => import("./detail-nft"))
 const CreateNft = lazy(() => import("./create-nft"))
+const LoginNft = lazy(() => import("./nft-login"))
+const UpdateNft = lazy(() => import("./nft-update"))
 const LoginGame = lazy(() => import("./game/login"))
 
 const routes = [
@@ -45,6 +47,20 @@ const routes = [
         exact: true,
         public: true,
         component: CreateNft,
+        layout: MarketLayout
+    },
+    {
+        path: "nft/login",
+        exact: true,
+        public: true,
+        component: LoginNft,
+        layout: MarketLayout
+    },
+    {
+        path: "nft/update",
+        exact: true,
+        public: true,
+        component: UpdateNft,
         layout: MarketLayout
     },
 ]
