@@ -32,6 +32,7 @@ import {
 	Connect2ICProvider,
 	useConnect,
 } from '@connect2ic/react';
+import { POSITION } from 'react-toastify/dist/utils/constant.js';
 
 function Navbar(props) {
 	const { principal, isConnected, disconnect } = useConnect();
@@ -114,6 +115,14 @@ function Navbar(props) {
 							</>
 						)}
 					</Option>
+					<Menu>
+						<Link to='nft/login' style={{ color: 'black' }}>
+							<MenuItem>Login</MenuItem>
+						</Link>
+						<Link to='nft/update' style={{ color: 'black' }}>
+							<MenuItem>Update</MenuItem>
+						</Link>
+					</Menu>
 				</OptionWrapper>
 			</Right>
 		</Container>
